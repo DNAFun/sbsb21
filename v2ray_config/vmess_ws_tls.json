@@ -1,16 +1,17 @@
 {
   "inbounds": [
     {
-      "port": 23323,
+      "port": 10000,
+      "listen": "127.0.0.1",
       "protocol": "vmess",
       "settings": {
         "clients": [
           {
             "id": "$UUID",
+            "level": 1,
             "alterId": 64
           }
         ],
-        "disableInsecureEncryption": true
       },
       "streamSettings": {
         "network": "ws",
