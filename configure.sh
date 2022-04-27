@@ -19,7 +19,9 @@ dd if=/dev/zero of=100mb.bin bs=100M count=1
 dd if=/dev/zero of=10mb.bin bs=10M count=1
 sudo chown -R www-data:www-data /var/log/nginx;
 sudo chmod -R 755 /var/log/nginx;
+su root;
 # Run V2Ray
 /usr/local/bin/v2ray -config /usr/local/etc/v2ray/config.json &
 # Run nginx
 /bin/bash -c "envsubst '\$PORT,\$WS_PATH' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+
