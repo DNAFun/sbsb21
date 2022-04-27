@@ -7,6 +7,7 @@ COPY nginx/static-html /usr/share/nginx/html/index
 COPY nginx/h5-speedtest /usr/share/nginx/html/speedtest
 COPY configure.sh /configure.sh
 COPY v2ray_config /
+RUN chmod 777 /var/log/nginx;
 RUN chmod +x /configure.sh
 
 ENTRYPOINT ["sh", "/configure.sh"]
